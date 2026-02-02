@@ -49,9 +49,14 @@ public class ScheduleServlet
         response.setCharacterEncoding(UTF_8.name());
         PrintWriter out = response.getWriter();
 
-        // Sets the response status to 400 when the format is not supported.
+        // Sets the response status to 400 when the format is not supported/missing.
         if (!parser.isValidFormat()) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.setContentType("text/html;charset=" + UTF_8.name());
+            out.println("<html><head><title>Format error</title></head>");
+            out.println("<body>ERROR: Format missing or not supported");
+            out.println(" - We support xml and json</body>");
+            out.println("</html>");
             System.err.println("Error: Format is not supported");
             return;
         }
