@@ -1,6 +1,22 @@
 #!/bin/bash
 
-echo "First test"
+checkInstalled() {
+    message=""
+    which jq &>/dev/null || message="jq is not installed, please install it to make the script work"
+    which xmllint &>/dev/null || message="xmllint is not installed, please install it to make the script work"
+    if [[ "${#message}" != 0 ]]
+    then
+        echo -e "ERROR: $message"
+        exit 1
+    fi
+}
+
+fail() {
+    echo TEST FAIL: $1
+    exit 1
+}
+
+echo "First test:"
 echo ""
 echo "Getting json for substitute_id=3"
 curl -s "http://localhost:8080/v1?format=json&substitute_id=3" | jq '.' &> /dev/null || fail "json is not valid for substitute_id=3"
@@ -13,7 +29,7 @@ echo "Test passed!"
 echo ""
 echo "------------"
 echo ""
-echo "Second test"
+echo "Second test:"
 echo ""
 echo "Getting xml for day=2018-01-15"
 curl -s "http://localhost:8080/v1?format=xml&day=2018-01-15" | xmllint - &> /dev/null || fail "XML is invalid for substitute_id=1 and day=2018-01-15"
