@@ -81,7 +81,7 @@ public class ScheduleServlet
 
             // Sets the response status to 404 when a parameter is not found or not valid
             // and prints out the defaultFormat for json/xml
-            if (assignments.isEmpty() && !assignments.contains(out)) {
+            if (assignments.isEmpty()) {
                 response.setStatus(HttpServletResponse.SC_NOT_FOUND);
                 out.println(parser.defaultFormat());
                 System.err.println("Error: Parameter not valid/not found");
