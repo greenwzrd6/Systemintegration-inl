@@ -91,7 +91,13 @@ public class ScheduleServlet
             if (assignments.isEmpty()) {
                 response.setStatus(HttpServletResponse.SC_NOT_FOUND);
                 out.println(parser.defaultFormat());
-                System.err.println("Error: Parameter not valid/not found");
+                if (parser.day() != null) {
+                    System.err.println("Error: Parameter day: " + parser.day() + " not valid/not found");
+                } else if (parser.teacherId() != null) {
+                    System.err.println("Error: Parameter teacher_id: " + parser.teacherId() + " not valid/not found");
+                } else {
+                    System.err.println("Error: Parameter not found/not valid");
+                }
                 return;
             }
 
