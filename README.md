@@ -4,6 +4,8 @@ This project is a servlet that contains some data about schedules for substitute
 
 There are four scripts, one for compiling and starting the servlet, one for cleaning, one for tests that my teacher made and one with two tests that I made. The scripts are only made for unix systems (macos/linux).
 
+To download use git clone https://github.com/greenwzrd6/Systemintegration-inl.git
+
 To run a script:
 
 1. chmod +x <name_of_script>.sh (to make it executable)
