@@ -15,4 +15,4 @@ When you run the ./compile_servlet_and_start_winstone.sh it starts a servlet tha
 If you want to run more scripts or use commands then you need to open a new terminal window.
 
 To debug you can see Error messages in the terminal that is running the servlet. 
-And you can use lwp-request -m HEAD <url> to check the HTML status codes.
+And you can use lwp-request -m HEAD <url> to check the HTML status codes. (or lwp-request -m GET -e <url> to get both the body and head)
