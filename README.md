@@ -11,7 +11,7 @@ To run a script:
 1. `chmod +x <name-of-script>.sh (to make it executable)`
 2. `./<name-of-script>.sh`
 
-When you run the ./compile_servlet_and_start_winstone.sh it starts a servlet that runs inside that terminal window.
+When you run the `./compile_servlet_and_start_winstone.sh` it starts a servlet that runs inside that terminal window.
 If you want to run more scripts or use commands then you need to open a new terminal window.
 
 To use parameters in lwp-request for example write like this `lwp-request -m GET "<servlet-url>:<port>?format={xml|json}&{day|teacher_id}=<value>"`
