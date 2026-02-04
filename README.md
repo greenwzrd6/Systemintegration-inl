@@ -15,7 +15,8 @@ When you run the `./compile_servlet_and_start_winstone.sh` it starts a servlet t
 If you want to run more scripts or use commands then you need to open a new terminal window.
 
 To use parameters in the url write like this:  
-`<servlet-url>:<port>?format={xml|json}[&day=<date>][&teacher_id=<id>]`  
+`<servlet-url>:<port>?format={xml|json}[&day=<date>][&teacher_id=<id>]`
+
 example 1: `lwp-request -m GET "http://localhost:8080?format=json&day=2018-01-16&teacher_id=1"`  
 example 2: `lwp-request -m GET "http://localhost:8080?format=json&teacher_id=1"`
 
